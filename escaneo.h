@@ -3,7 +3,7 @@
 #include <vector>
 #include <map>
 
-enum class EstadoPuerto { Abierto, Cerrado, Filtrado };
+enum class EstadoPuerto { Abierto, Cerrado, Filtrado, Desconocido };
 
 struct ResultadoPuerto {
     int puerto;
@@ -15,3 +15,4 @@ struct ResultadoPuerto {
 std::vector<ResultadoPuerto> escanearTCP(const std::string& ip, const std::vector<int>& puertos, int timeout_ms);
 std::vector<ResultadoPuerto> escanearUDP(const std::string& ip, const std::vector<int>& puertos, int timeout_ms);
 int calcularTimeoutTCP(const std::string& ip, int puertoPrueba=80);
+int calcularTimeoutUDP(const std::string& ip);
